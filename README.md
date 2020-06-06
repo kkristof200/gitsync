@@ -1,18 +1,18 @@
-# gitsync
+# syncall
 
 ## Description
 syncs (pull or push) all github repos from a certain directory
 
 ## Install
 ~~~~shell
-wget https://raw.githubusercontent.com/kkristof200/gitsync/master/gitsync -O /usr/local/bin/gitsync && chmod u+x /usr/local/bin/gitsync
+wget https://raw.githubusercontent.com/kkristof200/syncall/master/syncall -O /usr/local/bin/syncall && chmod u+x /usr/local/bin/syncall
 # or
-curl https://raw.githubusercontent.com/kkristof200/gitsync/master/gitsync > /usr/local/bin/gitsync && chmod u+x /usr/local/bin/gitsync
+curl https://raw.githubusercontent.com/kkristof200/syncall/master/syncall > /usr/local/bin/syncall && chmod u+x /usr/local/bin/syncall
 ~~~~
 
 ## Usage
 ~~~~shell
-gitsync [path_to_folder_where_the_repo_folders_are]
+syncall [path_to_folder_where_the_repo_folders_are]
 # path defaults to ~/github
 ~~~~
 
