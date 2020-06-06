@@ -1,0 +1,32 @@
+#!/bin/bash
+
+MAIN_GITHUB_FOLDER_PATH=$1
+if [ "$MAIN_GITHUB_FOLDER_PATH" == "" ]; then
+    MAIN_GITHUB_FOLDER_PATH=~/github
+fi
+
+cd $MAIN_GITHUB_FOLDER_PATH
+
+for d in */ ; do
+    cd $MAIN_GITHUB_FOLDER_PATH/$d
+    res=$(git status)
+
+    if [[ $res != *"nothing to commit"* ]] || [[ $res != *"branch is up to date with"* ]]; then
+        echo -e "\n\n----------------------------------------------------------------\n"
+        echo -e "Proj: "$d
+        echo -e "Path: "$(pwd)"\n"
+
+        if [[ $res != *"branch is up to date with"* ]]; then
+            echo -e "\nPulling\n"
+            git pull
+        done
+
+        if [[ $res != *"nothing to commit"* ]]; then
+            echo -e "\nPushing\n"
+            push
+        done
+
+        echo -e "\n----------------------------------------------------------------\n\n"
+    fi
+done
+
